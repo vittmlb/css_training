@@ -1,0 +1,165 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.box {
+    background-color: whitesmoke;
+    padding: 10px;
+    width: 290px;
+    margin: 10px 10px 0 20px;
+    height: 280px;
+    display: inline-block;
+}
+.box h1 {
+    font-size: 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-bottom: 8px;
+    text-align: center;
+    border-bottom: 1px solid orange;
+    color: orange;
+}
+.box button {
+    width: 160px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+.transitions {
+    background-color: beige;
+    margin: 30px;
+    height: 320px;
+    padding: 10px;
+}
+
+.transition-color {
+    float: left;
+}
+.transition-color button {
+    margin: 20px auto 40px auto;
+}
+
+/* Transition Color */
+#btn-transition-color {
+    transition: color 1s, border-radius 1s;
+}
+#btn-transition-color:hover {
+    background-color: cadetblue;
+    border-radius: 0;
+}
+
+/* Transition Slide */
+.trans-content {
+    position: relative;
+    overflow: hidden;
+}
+.content {
+    position: absolute;
+    transition: top 0.4s;
+}
+.top {
+    top: 10px;
+    left: 60px;
+}
+.bottom {
+    top: 110px;
+    left: 60px;
+}
+.trans-content:hover .top {
+    top: -100px;
+}
+.trans-content:hover .bottom {
+    top: 10px;
+}
+
+/* Transition Visibility */
+.mymodal {
+    box-sizing: border-box;
+    background-color: #1b6d85;
+    color: white;
+    width: 180px;
+    height: 140px;
+    margin: 20px auto;
+    text-align: center;
+    padding-top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 1s;
+}
+.box-transition-visibility {
+    float: left;
+}
+.box-transition-visibility button {
+    margin: 0 auto;
+}
+.mymodal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Transition Rotation */
+.box-transition-rotation {
+    float: left;
+}
+.caixa {
+    background-color: hotpink;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    position: relative;
+}
+.caixa span {
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    transition: transform 1.5s 0.2s;
+    cursor: pointer;
+}
+.caixa span:hover {
+    transform: rotate(360deg);
+}
+
+/* Transform Panel */
+#mycaixa {
+    transform-origin: center top;
+    transition: transform 0.7s;
+}
+#mycaixa:hover {
+    transform: scale(1.2);
+}
+#slide-panel {
+    margin: 0 auto;
+}
+.panel {
+    background-color: orange;
+    color: white;
+    padding: 20px;
+    width: 400px;
+    top: 0;
+    left: -400px;
+    height: 1200px;
+    display: inline-block;
+    position: absolute;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 1s;
+}
+.panel-active {
+    opacity: 1;
+    visibility: visible;
+    animation: slideUp .85s cubic-bezier(0.17, 0.89, 0.32, 1.28) forwards;
+}
+@keyframes slideUp {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(400px);
+    }
+}

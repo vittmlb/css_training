@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All</title>
+    <link rel="stylesheet" href="./css/geral.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="panel">Panel</div>
+<div class="transitions">
+    <div class="box transition-color">
+        <h1>Transition Color</h1>
+        <button id="btn-transition-color">Alow</button>
+        <h1>Transition Slide</h1>
+        <button class="trans-content">
+            <span class="content top">Buy now</span>
+            <span class="content bottom">Only $99!</span>
+        </button>
+    </div>
+    <div class="box box-transition-visibility">
+        <h1>Transition Visibility</h1>
+        <div class="mymodal">
+            Modal
+        </div>
+        <button id="btn-visibility">Visibilidade</button>
+    </div>
+    <div class="box box-transition-rotation">
+        <h1>Transition Rotation</h1>
+        <div class="caixa">
+            <span>&times;</span>
+        </div>
+    </div>
+    <div class="box box-transform-panel">
+        <h1>Transform Panel</h1>
+        <div class="caixa" id="mycaixa"></div>
+        <button id="slide-panel">Slide Panel</button>
+    </div>
+</div>
+<script>
+    var what_visibility = true;
+    $('#btn-visibility').on('click', function () {
+        if(what_visibility) {
+            $('.mymodal').addClass('active');
+        } else {
+            $('.mymodal').removeClass('active');
+        }
+        what_visibility = !what_visibility;
+    });
+    var what_panel = false;
+    $('#slide-panel').on('click', function () {
+        if(what_panel) {
+            $('.panel').addClass('panel-active');
+        } else {
+            $('.panel').removeClass('panel-active');
+        }
+        what_panel = !what_panel;
+    });
+</script>
+</body>
+</html>
